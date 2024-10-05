@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get('/')
 def hello_world():
-    return "Hello,World"
+    return "<html><body><b>Hello,World</b></body></html>"
 
 
 if __name__ == '__main__':

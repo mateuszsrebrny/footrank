@@ -61,9 +61,16 @@ def get_ranking_changes():
     except Exception:
         raise HTTPException(status_code=500, detail="Error retrieving ranking changes.")
 
-@app.get('/')
+@app.get('/', response_class=HTMLResponse)
 def hello_world():
-    return "<html><body><b>Hello,World</b></body></html>"
+    html = (
+        "<html>\n"
+        "<body>\n"
+        "    <b>Hello,World</b>\n"
+        "</body>\n"
+        "</html>\n"
+    )
+    return HTMLResponse(content=html, status_code=200)
 
 
 if __name__ == '__main__':
